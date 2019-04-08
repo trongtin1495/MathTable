@@ -14,7 +14,6 @@ class ResultCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var view: UIView!
     
     var roundCorner = true
-    var isAnimating = false
     
     override func awakeFromNib() {
         super.awakeFromNib()

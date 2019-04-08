@@ -21,8 +21,6 @@ class LearnTableViewCell: UITableViewCell {
         didSet { checkAnswer() }
     }
     
-    var isAnimating = false
-    
     var isPressed = false {
         didSet {
             if isPressed {

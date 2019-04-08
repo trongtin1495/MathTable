@@ -43,7 +43,7 @@ extension UILabel {
     
     func makeSnapshotLabel() -> UILabel {
         
-        let label = UILabel(frame: bounds)
+        let label = UILabel()
         label.text = text
         label.backgroundColor = backgroundColor
         label.layer.cornerRadius = layer.cornerRadius
