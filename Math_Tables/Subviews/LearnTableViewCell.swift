@@ -21,6 +21,8 @@ class LearnTableViewCell: UITableViewCell {
         didSet { checkAnswer() }
     }
     
+    var isAnimating = false
+    
     var isPressed = false {
         didSet {
             if isPressed {
@@ -95,8 +97,6 @@ class LearnTableViewCell: UITableViewCell {
         guard let tempResult = tempResult else { return }
         lbResult.text = cell.lbResult.text
         cell.lbResult.text = tempResult
-        
-        
     }
     
     func setupView() {

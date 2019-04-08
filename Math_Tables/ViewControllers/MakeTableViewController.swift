@@ -93,7 +93,8 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
         guard
             let indexPath = tableView.indexPathForRow(at: panLocationInTBV),
             let cell = tableView.cellForRow(at: indexPath) as? LearnTableViewCell,
-            cell.isAnswered
+            cell.isAnswered,
+            !cell.isAnimating
             else { return }
         
         let labelSnapShot = cell.lbResult.makeSnapshot(backgroundColor: UIColor.flatYellowDark)
@@ -133,9 +134,13 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
             let cell = tableView.cellForRow(at: currentIndexPath) as? LearnTableViewCell
             else {
                 snapShotView.removeFromSuperview()
+                self.snapShotViewTBV = nil
+                self.highLightCell = nil
                 self.selectingCellTBV?.cancelSwap()
                 return
             }
+        
+        cell.isAnimating = true
         
         let cellFrameInView = tableView.convert(cell.frame, to: view)
         UIView.animate(withDuration: 0.3, animations: {
@@ -153,6 +158,7 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
             UIView.animate(withDuration: 0.2, animations: {
                 snapShotView.alpha = 0
             }, completion: { (_) in
+                cell.isAnimating = false
                 snapShotView.removeFromSuperview()
                 self.snapShotViewTBV = nil
                 self.selectingCellTBV = nil
@@ -181,13 +187,12 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
         
         guard
             let indexPathCV = collectionView.indexPathForItem(at: panLocationInCV),
-            let attr = collectionView.layoutAttributesForItem(at: indexPathCV),
             let cell = collectionView.cellForItem(at: indexPathCV) as? ResultCollectionViewCell,
-            !cell.isHidden
+            !cell.isHidden,
+            !cell.isAnimating
             else { return }
         
-        let cellSnapshot = cell.lbResult.makeSnapshotLabel() //.makeSnapshot()
-        cellSnapshot.frame = collectionView.convert(attr.frame, to: view)
+        let cellSnapshot = cell.lbResult.makeSnapshotLabel()
         
         snapShotViewCV = cellSnapshot
         view.addSubview(cellSnapshot)
@@ -246,6 +251,7 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         let cellFrameInView = tableView.convert(cell.frame, to: view)
+        cell.isAnimating = true
         
         UIView.animate(withDuration: 0.3, animations: {
             snapShotView.frame.size = cell.lbResult.frame.size
@@ -259,6 +265,7 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
                 cell.updateAnswer(answer: selectingResult)
                 snapShotView.alpha = 0
             }, completion: { (_) in
+                cell.isAnimating = false
                 snapShotView.removeFromSuperview()
                 self.snapShotViewCV = nil
                 self.selectingResultCV = nil
