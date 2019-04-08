@@ -68,8 +68,6 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 scoreList.append(score)
             }
         }
-        
-        print(scoreDict)
     }
 
     @IBAction func btnHome(_ sender: Any) {
@@ -77,8 +75,8 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if dateStringList.count >= 5 {
-            return 5
+        if dateStringList.count >= 10 {
+            return 10
         } else {
             return dateStringList.count
         }

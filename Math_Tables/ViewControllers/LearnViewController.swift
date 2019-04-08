@@ -25,7 +25,6 @@ class LearnViewController: UIViewController, UITableViewDataSource, UITableViewD
     let synthesizer = AVSpeechSynthesizer()
     var speakIndex = 0
     var isSpeakAll = false
-    var backToHomeCallback: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,12 +106,7 @@ class LearnViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBAction func btnClose(_ sender: Any) {
         stopSpeaking()
-
-        dismiss(animated: true, completion: {
-            if let callbaclk = self.backToHomeCallback {
-                callbaclk()
-            }
-        })
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnSpeak(_ sender: Any) {
@@ -159,6 +153,7 @@ class LearnViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func stopSpeaking() {
         isSpeakAll = false
+        
         synthesizer.stopSpeaking(at: .immediate)
     }
     

@@ -186,7 +186,7 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
             !cell.isHidden
             else { return }
         
-        let cellSnapshot = cell.makeSnapshot()
+        let cellSnapshot = cell.lbResult.makeSnapshotLabel() //.makeSnapshot()
         cellSnapshot.frame = collectionView.convert(attr.frame, to: view)
         
         snapShotViewCV = cellSnapshot
@@ -246,6 +246,7 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         let cellFrameInView = tableView.convert(cell.frame, to: view)
+        
         UIView.animate(withDuration: 0.3, animations: {
             snapShotView.frame.size = cell.lbResult.frame.size
 

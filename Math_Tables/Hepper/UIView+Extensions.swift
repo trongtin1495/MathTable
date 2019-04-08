@@ -38,3 +38,25 @@ extension UIView {
         return snapshot
     }
 }
+
+extension UILabel {
+    
+    func makeSnapshotLabel() -> UILabel {
+        
+        let label = UILabel(frame: bounds)
+        label.text = text
+        label.backgroundColor = backgroundColor
+        label.layer.cornerRadius = layer.cornerRadius
+        label.font = UIFont(name: Constant.LabelFont.resultFont, size: 30.0)
+        label.textColor = .white
+
+        // Tạo style cho snapshot view nổi bật hơn
+        label.layer.masksToBounds = true
+        label.layer.shadowOffset = CGSize(width: -5.0, height: 0.0)
+        label.layer.shadowRadius = 5.0
+        label.layer.shadowOpacity = 0.4
+        label.textAlignment = .center
+
+        return label
+    }
+}

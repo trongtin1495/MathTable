@@ -40,10 +40,6 @@ class SelectNumberViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let view = LearnViewController(nibName: kNibName.LearnViewController, bundle: nil)
         view.number = indexPath.item + 1
-        
-        view.backToHomeCallback = {
-            self.dismiss(animated: true, completion: nil)
-        }
 
         self.present(view, animated: true, completion: nil)
     }
