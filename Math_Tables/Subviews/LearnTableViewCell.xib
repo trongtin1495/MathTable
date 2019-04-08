@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ChangaOne-Regular.ttf">
+            <string>ChangaOne</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="66" id="KGk-i7-Jjw" customClass="LearnTableViewCell" customModule="Math_Tables" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="268" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3m-kX-acO">
+                        <rect key="frame" x="5" y="5" width="258" height="55.5"/>
+                        <subviews>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6   x   10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpB-bB-sUJ">
+                                <rect key="frame" x="0.0" y="0.0" width="142" height="55.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ChangaOne" family="Changa One" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otT-s1-Jmx">
+                                <rect key="frame" x="142" y="0.0" width="32" height="55.5"/>
+                                <fontDescription key="fontDescription" name="ChangaOne" family="Changa One" pointSize="33"/>
+                                <color key="textColor" red="0.99607843137254903" green="0.74901960784313726" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyQ-EB-U4p">
+                                <rect key="frame" x="174" y="0.0" width="84" height="55.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ChangaOne" family="Changa One" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MpB-bB-sUJ" firstAttribute="width" secondItem="k3m-kX-acO" secondAttribute="width" multiplier="2.2/4" id="1DH-7N-53U"/>
+                            <constraint firstAttribute="bottom" secondItem="MpB-bB-sUJ" secondAttribute="bottom" id="H90-i1-Ypw"/>
+                            <constraint firstAttribute="bottom" secondItem="VyQ-EB-U4p" secondAttribute="bottom" id="HPW-eo-Yxv"/>
+                            <constraint firstItem="VyQ-EB-U4p" firstAttribute="width" secondItem="k3m-kX-acO" secondAttribute="width" multiplier="1.3/4" id="PnW-oV-8gC"/>
+                            <constraint firstItem="otT-s1-Jmx" firstAttribute="top" secondItem="k3m-kX-acO" secondAttribute="top" id="S61-J4-dNk"/>
+                            <constraint firstAttribute="bottom" secondItem="otT-s1-Jmx" secondAttribute="bottom" id="WJw-Wj-yOv"/>
+                            <constraint firstItem="otT-s1-Jmx" firstAttribute="leading" secondItem="MpB-bB-sUJ" secondAttribute="trailing" id="iC8-xb-4hU"/>
+                            <constraint firstItem="VyQ-EB-U4p" firstAttribute="leading" secondItem="otT-s1-Jmx" secondAttribute="trailing" id="r4m-fE-AmY"/>
+                            <constraint firstItem="VyQ-EB-U4p" firstAttribute="top" secondItem="k3m-kX-acO" secondAttribute="top" id="sw3-8h-Npo"/>
+                            <constraint firstAttribute="trailing" secondItem="VyQ-EB-U4p" secondAttribute="trailing" id="tXw-jA-ohY"/>
+                            <constraint firstItem="MpB-bB-sUJ" firstAttribute="leading" secondItem="k3m-kX-acO" secondAttribute="leading" id="v8k-cw-cgX"/>
+                            <constraint firstItem="MpB-bB-sUJ" firstAttribute="top" secondItem="k3m-kX-acO" secondAttribute="top" id="zQY-ny-ybE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="k3m-kX-acO" secondAttribute="bottom" constant="5" id="1au-aX-Wrz"/>
+                    <constraint firstItem="k3m-kX-acO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3k1-MW-teW"/>
+                    <constraint firstAttribute="trailing" secondItem="k3m-kX-acO" secondAttribute="trailing" constant="5" id="Uiw-gO-Z0H"/>
+                    <constraint firstItem="k3m-kX-acO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="XRK-f0-Vyp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellView" destination="H2p-sc-9uM" id="QJw-NZ-9WA"/>
+                <outlet property="lbEqual" destination="otT-s1-Jmx" id="blk-X1-Jsx"/>
+                <outlet property="lbMultiplication" destination="MpB-bB-sUJ" id="kdK-Gb-xSa"/>
+                <outlet property="lbResult" destination="VyQ-EB-U4p" id="Or8-6e-WaV"/>
+                <outlet property="viewCalculation" destination="k3m-kX-acO" id="Sob-QF-q6c"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="200.59970014992504"/>
+        </tableViewCell>
+    </objects>
+</document>

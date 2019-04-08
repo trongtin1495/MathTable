@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Math_Tables" customModuleProvider="target">
+            <connections>
+                <outlet property="btnLearn" destination="aCI-tt-68l" id="fbT-XX-F7D"/>
+                <outlet property="btnMake" destination="gnY-vE-Sbo" id="Rmq-32-B5B"/>
+                <outlet property="btnPlay" destination="sl9-73-443" id="Ckg-pH-Mtj"/>
+                <outlet property="btnScore" destination="VvG-VF-bq1" id="k0B-AN-5EB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg4" translatesAutoresizingMaskIntoConstraints="NO" id="n4L-ay-yoL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_ic" translatesAutoresizingMaskIntoConstraints="NO" id="vqR-uE-35c">
+                    <rect key="frame" x="20" y="85.5" width="335" height="122"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IeP-f4-RnS">
+                    <rect key="frame" x="10" y="277.5" width="355" height="132"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCI-tt-68l">
+                            <rect key="frame" x="0.0" y="0.0" width="111.5" height="132"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="aCI-tt-68l" secondAttribute="height" multiplier="11:13" id="7aJ-Xm-lFI"/>
+                            </constraints>
+                            <state key="normal" image="learn_ic">
+                                <attributedString key="attributedTitle"/>
+                            </state>
+                            <connections>
+                                <action selector="btnLearn:" destination="-1" eventType="touchUpInside" id="iUw-gH-oyi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnY-vE-Sbo">
+                            <rect key="frame" x="121.5" y="0.0" width="112" height="132"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="make_ic">
+                                <attributedString key="attributedTitle"/>
+                            </state>
+                            <connections>
+                                <action selector="btnMake:" destination="-1" eventType="touchUpInside" id="54f-P1-8yc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sl9-73-443">
+                            <rect key="frame" x="243.5" y="0.0" width="111.5" height="132"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="play_ic">
+                                <attributedString key="attributedTitle"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPlay:" destination="-1" eventType="touchUpInside" id="JCV-tC-qbL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="sl9-73-443" firstAttribute="height" secondItem="aCI-tt-68l" secondAttribute="height" id="3Yg-b2-7c7"/>
+                        <constraint firstItem="gnY-vE-Sbo" firstAttribute="height" secondItem="aCI-tt-68l" secondAttribute="height" id="U6q-oA-BB6"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvG-VF-bq1">
+                    <rect key="frame" x="130.5" y="582" width="114" height="55"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="score_ic">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnScore:" destination="-1" eventType="touchUpInside" id="Xdi-So-jad"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VvG-VF-bq1" secondAttribute="bottom" constant="30" id="6Fd-BL-yYh"/>
+                <constraint firstItem="IeP-f4-RnS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Br1-vv-bhf"/>
+                <constraint firstItem="VvG-VF-bq1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Emp-uk-zlA"/>
+                <constraint firstItem="IeP-f4-RnS" firstAttribute="top" secondItem="vqR-uE-35c" secondAttribute="bottom" constant="70" id="IDV-cC-hxY"/>
+                <constraint firstAttribute="trailing" secondItem="n4L-ay-yoL" secondAttribute="trailing" id="JNq-S3-ZCv"/>
+                <constraint firstItem="IeP-f4-RnS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="PEf-xa-y3d"/>
+                <constraint firstItem="vqR-uE-35c" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QEY-so-KPv"/>
+                <constraint firstItem="IeP-f4-RnS" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Spg-qe-3zF"/>
+                <constraint firstItem="vqR-uE-35c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="f9d-g6-uof"/>
+                <constraint firstItem="n4L-ay-yoL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uIc-AZ-NUI"/>
+                <constraint firstItem="n4L-ay-yoL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ysE-qT-ph5"/>
+                <constraint firstAttribute="bottom" secondItem="n4L-ay-yoL" secondAttribute="bottom" id="z6l-jF-DOQ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg4" width="564" height="1221"/>
+        <image name="learn_ic" width="357" height="262"/>
+        <image name="make_ic" width="357" height="267"/>
+        <image name="play_ic" width="358" height="286"/>
+        <image name="score_ic" width="114" height="55"/>
+        <image name="title_ic" width="482" height="122"/>
+    </resources>
+</document>

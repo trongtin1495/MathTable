@@ -1,0 +1,6 @@
+framework module Pods_Math_Tables {
+  umbrella header "Pods-Math_Tables-umbrella.h"
+
+  export *
+  module * { export * }
+}

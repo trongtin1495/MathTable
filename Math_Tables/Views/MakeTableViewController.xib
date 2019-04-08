@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ChangaOne-Regular.ttf">
+            <string>ChangaOne</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MakeTableViewController" customModule="Math_Tables" customModuleProvider="target">
+            <connections>
+                <outlet property="btnHome" destination="dPO-CO-45q" id="XMZ-oI-uOY"/>
+                <outlet property="btnNext" destination="TPM-ih-J5h" id="X7o-uw-7py"/>
+                <outlet property="btnSubmit" destination="ZKF-zQ-0IF" id="lJB-8W-Bbi"/>
+                <outlet property="collectionView" destination="mxA-ym-v7A" id="pfw-8n-4Ks"/>
+                <outlet property="lbQuestion" destination="NHP-Ft-bY0" id="P5f-jq-DkS"/>
+                <outlet property="tableView" destination="nm7-RV-vEX" id="qHr-7t-y3D"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg4" translatesAutoresizingMaskIntoConstraints="NO" id="Cj5-Rm-8VL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dPO-CO-45q">
+                    <rect key="frame" x="8" y="28" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="opk-R1-4kg"/>
+                        <constraint firstAttribute="width" constant="40" id="vjq-q2-hvv"/>
+                    </constraints>
+                    <state key="normal" image="home-ic">
+                        <attributedString key="attributedTitle"/>
+                    </state>
+                    <connections>
+                        <action selector="btnBack:" destination="-1" eventType="touchUpInside" id="vFx-qs-kmE"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yDy-F2-oJw">
+                    <rect key="frame" x="82" y="32" width="211" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHP-Ft-bY0">
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="32"/>
+                            <fontDescription key="fontDescription" name="ChangaOne" family="Changa One" pointSize="30"/>
+                            <color key="textColor" red="0.87122534200000001" green="1" blue="0.25536737749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cq-V9-z95">
+                            <rect key="frame" x="55" y="0.0" width="156" height="32"/>
+                            <fontDescription key="fontDescription" name="ChangaOne" family="Changa One" pointSize="30"/>
+                            <color key="textColor" red="1" green="0.51372549020000002" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nm7-RV-vEX">
+                    <rect key="frame" x="32" y="76" width="311" height="479"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mxA-ym-v7A">
+                    <rect key="frame" x="16" y="563" width="343" height="96"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xai-VU-Vga">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKF-zQ-0IF">
+                    <rect key="frame" x="130" y="586" width="115" height="50"/>
+                    <fontDescription key="fontDescription" name="ChangaOne" family="Changa One" pointSize="35"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnSubmit:" destination="-1" eventType="touchUpInside" id="XoQ-Ge-gl8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPM-ih-J5h">
+                    <rect key="frame" x="284" y="573.5" width="75" height="75"/>
+                    <state key="normal" image="arrow_ic"/>
+                    <connections>
+                        <action selector="btnNext:" destination="-1" eventType="touchUpInside" id="hXM-Ng-U7O"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Cj5-Rm-8VL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3CU-xV-4q1"/>
+                <constraint firstAttribute="trailing" secondItem="Cj5-Rm-8VL" secondAttribute="trailing" id="94R-SS-3Nl"/>
+                <constraint firstItem="mxA-ym-v7A" firstAttribute="top" secondItem="nm7-RV-vEX" secondAttribute="bottom" constant="8" id="Cyt-tg-IrK"/>
+                <constraint firstItem="nm7-RV-vEX" firstAttribute="top" secondItem="dPO-CO-45q" secondAttribute="bottom" constant="8" id="Ei1-W9-ZC1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mxA-ym-v7A" secondAttribute="bottom" constant="8" id="Ho6-SQ-qVa"/>
+                <constraint firstItem="dPO-CO-45q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Hux-It-TsU"/>
+                <constraint firstItem="nm7-RV-vEX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="JrC-CJ-TVk"/>
+                <constraint firstItem="TPM-ih-J5h" firstAttribute="centerY" secondItem="ZKF-zQ-0IF" secondAttribute="centerY" id="RUv-tf-cm6"/>
+                <constraint firstItem="Cj5-Rm-8VL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TM1-3S-a61"/>
+                <constraint firstItem="TPM-ih-J5h" firstAttribute="trailing" secondItem="mxA-ym-v7A" secondAttribute="trailing" id="VAp-41-P6x"/>
+                <constraint firstItem="yDy-F2-oJw" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="YkD-pz-mEQ"/>
+                <constraint firstItem="mxA-ym-v7A" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="g7C-YN-kwZ"/>
+                <constraint firstItem="mxA-ym-v7A" firstAttribute="height" secondItem="nm7-RV-vEX" secondAttribute="height" multiplier="1/5" id="gBV-Ap-QAe"/>
+                <constraint firstItem="dPO-CO-45q" firstAttribute="centerY" secondItem="yDy-F2-oJw" secondAttribute="centerY" id="jcx-PW-zzt"/>
+                <constraint firstItem="dPO-CO-45q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="lKA-Hr-Acv"/>
+                <constraint firstItem="nm7-RV-vEX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="nfE-FP-BA7"/>
+                <constraint firstAttribute="bottom" secondItem="Cj5-Rm-8VL" secondAttribute="bottom" id="seH-Vx-NEc"/>
+                <constraint firstItem="mxA-ym-v7A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sqh-Qy-wQN"/>
+                <constraint firstItem="ZKF-zQ-0IF" firstAttribute="centerY" secondItem="mxA-ym-v7A" secondAttribute="centerY" id="t5V-rN-qCL"/>
+                <constraint firstItem="ZKF-zQ-0IF" firstAttribute="centerX" secondItem="mxA-ym-v7A" secondAttribute="centerX" id="uVi-07-Ghf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow_ic" width="75" height="75"/>
+        <image name="bg4" width="564" height="1221"/>
+        <image name="home-ic" width="256" height="256"/>
+    </resources>
+</document>
