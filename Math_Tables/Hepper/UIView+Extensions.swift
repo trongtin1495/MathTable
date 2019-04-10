@@ -45,9 +45,12 @@ extension UILabel {
         
         let label = UILabel()
         label.text = text
-        label.backgroundColor = backgroundColor
-        label.layer.cornerRadius = layer.cornerRadius
-        label.font = UIFont(name: Constant.LabelFont.resultFont, size: 30.0)
+        label.backgroundColor = UIColor.flatYellowDark
+        
+        label.frame.size = CGSize(width: 50, height: 50)
+        label.layer.cornerRadius = label.frame.height / 2
+            
+        label.font = UIFont(name: Constant.LabelFont.resultFont, size: 25.0)
         label.textColor = .white
 
         // Tạo style cho snapshot view nổi bật hơn
