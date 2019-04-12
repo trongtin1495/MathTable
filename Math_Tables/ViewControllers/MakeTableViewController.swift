@@ -135,77 +135,80 @@ class MakeTableViewController: UIViewController, UITableViewDataSource, UITableV
         if collectionView.bounds.contains(panLocationInCV) && saveResultAndIndexPath.count != 10 {
             self.highLightCell = nil
             
-            if
+            guard
                 let indexPathCV = collectionView.indexPathForItem(at: panLocationInCV),
                 let cellCV = collectionView.cellForItem(at: indexPathCV) as? ResultCollectionViewCell,
                 let selectingResultTBV = self.selectingResultTBV,
-                let resultNeedSwap = cellCV.lbResult.text {
-                
-                for (key, value) in self.saveResultAndIndexPath {
-                    if value == indexPathCV {
-                        self.selectingCellTBV?.cancelSwap()
-                        snapShotView.removeFromSuperview()
-                        self.snapShotViewTBV = nil
-                        return
-                    }
-                    
-                    if key == selectingResultTBV {
-                        self.saveResultAndIndexPath.removeValue(forKey: key)
-                        let cellHidden = collectionView.cellForItem(at: value) as? ResultCollectionViewCell
-                        cellHidden?.isHidden = false
-                    }
+                let resultNeedSwap = cellCV.lbResult.text
+                else {
+                    snapShotView.removeFromSuperview()
+                    self.snapShotViewTBV = nil
+                    self.selectingCellTBV?.cancelSwap()
+                    return
                 }
                 
-                self.saveResultAndIndexPath.updateValue(indexPathCV, forKey: resultNeedSwap)
-                self.selectingCellTBV?.isAnswered = true
-                self.selectingCellTBV?.lbResult.text = cellCV.lbResult.text
-                cellCV.isHidden = true
-                
+            if cellCV.isHidden == true {
                 snapShotView.removeFromSuperview()
                 self.snapShotViewTBV = nil
-            }
-            
-            return
-        }
-        
-        guard
-            let currentIndexPath = tableView.indexPathForRow(at: panLocationInTBV),
-            let cell = tableView.cellForRow(at: currentIndexPath) as? LearnTableViewCell
-            else {
-                snapShotView.removeFromSuperview()
-                self.snapShotViewTBV = nil
-                self.highLightCell = nil
                 self.selectingCellTBV?.cancelSwap()
                 return
             }
-        
-        tableView.isUserInteractionEnabled = false
-        collectionView.isUserInteractionEnabled = false
-        let cellFrameInView = tableView.convert(cell.frame, to: view)
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            let x = cellFrameInView.maxX - cell.lbResult.frame.width - 5
-            let y = cellFrameInView.midY - cell.lbResult.bounds.midY
-            snapShotView.frame.origin = CGPoint(x: x, y: y)
-            snapShotView.frame.size = cell.lbResult.frame.size
-        }) { (_) in
-            if currentIndexPath != selectingIndexPath {
-                self.selectingCellTBV?.swapAnswer(cell: cell)
-            } else {
-                self.selectingCellTBV?.cancelSwap()
+            
+            for (key, value) in self.saveResultAndIndexPath {
+                
+                if key == selectingResultTBV {
+                    let cellHidden = collectionView.cellForItem(at: value) as? ResultCollectionViewCell
+                    cellHidden?.isHidden = false
+                    self.saveResultAndIndexPath.removeValue(forKey: key)
+                }
             }
             
-            UIView.animate(withDuration: 0.2, animations: {
-                snapShotView.alpha = 0
-            }, completion: { (_) in
-                snapShotView.removeFromSuperview()
-                self.snapShotViewTBV = nil
-                self.selectingCellTBV = nil
-                self.selectingIndexPathTBV = nil
-                self.highLightCell = nil
-                self.tableView.isUserInteractionEnabled = true
-                self.collectionView.isUserInteractionEnabled = true
-            })
+            self.saveResultAndIndexPath.updateValue(indexPathCV, forKey: resultNeedSwap)
+            self.selectingCellTBV?.isAnswered = true
+            self.selectingCellTBV?.lbResult.text = cellCV.lbResult.text
+            cellCV.isHidden = true
+            snapShotView.removeFromSuperview()
+            self.snapShotViewTBV = nil
+        } else {
+            guard
+                let currentIndexPath = tableView.indexPathForRow(at: panLocationInTBV),
+                let cell = tableView.cellForRow(at: currentIndexPath) as? LearnTableViewCell
+                else {
+                    snapShotView.removeFromSuperview()
+                    self.snapShotViewTBV = nil
+                    self.highLightCell = nil
+                    self.selectingCellTBV?.cancelSwap()
+                    return
+            }
+            
+            tableView.isUserInteractionEnabled = false
+            collectionView.isUserInteractionEnabled = false
+            let cellFrameInView = tableView.convert(cell.frame, to: view)
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                let x = cellFrameInView.maxX - cell.lbResult.frame.width - 5
+                let y = cellFrameInView.midY - cell.lbResult.bounds.midY
+                snapShotView.frame.origin = CGPoint(x: x, y: y)
+                snapShotView.frame.size = cell.lbResult.frame.size
+            }) { (_) in
+                if currentIndexPath != selectingIndexPath {
+                    self.selectingCellTBV?.swapAnswer(cell: cell)
+                } else {
+                    self.selectingCellTBV?.cancelSwap()
+                }
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    snapShotView.alpha = 0
+                }, completion: { (_) in
+                    snapShotView.removeFromSuperview()
+                    self.snapShotViewTBV = nil
+                    self.selectingCellTBV = nil
+                    self.selectingIndexPathTBV = nil
+                    self.highLightCell = nil
+                    self.tableView.isUserInteractionEnabled = true
+                    self.collectionView.isUserInteractionEnabled = true
+                })
+            }
         }
     }
     

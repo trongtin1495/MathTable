@@ -33,7 +33,7 @@ class SelectNumberViewController: UIViewController, UICollectionViewDelegate, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId.resultCell, for: indexPath) as! ResultCollectionViewCell
         cell.lbResult.text = String(items[indexPath.item])
         cell.lbResult.layer.cornerRadius = 5
-        cell.lbResult.backgroundColor = UIColor.flatCoffee
+        cell.lbResult.backgroundColor = UIColor.randomFlat
         return cell
     }
     
